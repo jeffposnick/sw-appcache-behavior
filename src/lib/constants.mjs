@@ -14,8 +14,7 @@
 */
 
 export default {
-  DB_NAME: 'appcache-to-service-worker',
-  DB_VERSION: 1,
+  MAX_MANIFEST_AGE: (24 * 60 * 60 * 1000),
   STORES: {
     CLIENT_ID_TO_HASH: 'client-to-hash',
     MANIFEST_URL_TO_CONTENTS: 'manifest-url-to-contents',

@@ -1,6 +1,6 @@
 {
   "name": "sw-appcache-behavior",
-  "version": "0.0.18",
+  "version": "0.1.0",
   "description": "A service worker implementation of the behavior defined in a page's App Cache manifest.",
   "keywords": [
     "appcache",
@@ -11,7 +11,6 @@
     "app cache"
   ],
   "files": [
-    "src",
     "build"
   ],
   "author": {
@@ -21,40 +20,29 @@
   },
   "license": "Apache-2.0",
   "repository": "googlechrome/sw-appcache-behavior",
-  "bugs": "https://github.com/googlechrome/sw-appcache-behavior/issues",
-  "homepage": "https://github.com/GoogleChrome/sw-appcache-behavior/",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "cookie-parser": "^1.4.3",
-    "eslint-config-google": "^0.7.1",
-    "express": "^4.15.2",
-    "fs-extra": "^2.1.2",
-    "geckodriver": "1.4.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-compile-handlebars": "^0.6.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-header": "^1.8.8",
-    "gulp-if": "^2.0.2",
-    "gulp-insert": "^0.5.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-rollup": "^2.11.0",
-    "gulp-sourcemaps": "^2.5.1",
-    "gulp-spawn-mocha": "^3.3.0",
-    "jsdoc-strip-async-await": "^0.1.0",
-    "mocha": "^3.2.0",
-    "promisify-node": "^0.4.0",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "run-sequence": "^1.2.2",
-    "selenium-assistant": "^5.0.4",
-    "serve-index": "^1.8.0",
-    "sw-testing-helpers": "^1.0.2"
+  "bugs": "https://github.com/GoogleChromeArchive/sw-appcache-behavior/issues",
+  "homepage": "https://github.com/GoogleChromeArchive/sw-appcache-behavior/",
+  "scripts": {
+    "build": "npm run clean && rollup --config",
+    "clean": "rimraf build",
+    "lint": "eslint src"
   },
-  "dependencies": {
-    "blueimp-md5": "^2.7.0",
-    "idb": "^2.0.1",
-    "parse-appcache-manifest": "^0.2.0"
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cookie-parser": "^1.4.3",
+    "eslint": "^5.5.0",
+    "eslint-config-google": "^0.10.0",
+    "express": "^4.16.3",
+    "geckodriver": "1.12.2",
+    "idb-keyval": "^3.1.0",
+    "mocha": "^5.2.0",
+    "parse-appcache-manifest": "^0.2.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.65.1",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "selenium-assistant": "^5.3.0",
+    "serve-index": "^1.9.1",
+    "sw-testing-helpers": "^1.0.2"
   }
 }

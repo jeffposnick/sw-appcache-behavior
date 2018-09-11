@@ -13,8 +13,6 @@
  limitations under the License.
 */
 
-/* eslint-disable no-console, valid-jsdoc */
-
 const gulp = require('gulp');
 const minimist = require('minimist');
 const runSequence = require('run-sequence');

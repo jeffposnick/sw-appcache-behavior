@@ -1,7 +1,4 @@
-/* eslint-env worker, serviceworker */
-/* global goog */
-
-importScripts('../build/appcache-behavior-import.js');
+importScripts('../build/sw-runtime.js');
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(goog.appCacheBehavior.fetch(event));
