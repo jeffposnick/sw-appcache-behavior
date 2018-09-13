@@ -1,7 +1,6 @@
 import {terser} from 'rollup-plugin-terser';
 import babel from 'rollup-plugin-babel';
 import commonJS from 'rollup-plugin-commonjs';
-import fse from 'fs-extra';
 import path from 'path';
 import resolve from 'rollup-plugin-node-resolve';
 
