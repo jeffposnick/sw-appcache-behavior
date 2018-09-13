@@ -20,7 +20,7 @@
     "url": "https://jeffy.info"
   },
   "license": "Apache-2.0",
-  "repository": "googlechrome/sw-appcache-behavior",
+  "repository": "GoogleChromeArchive/sw-appcache-behavior",
   "bugs": "https://github.com/GoogleChromeArchive/sw-appcache-behavior/issues",
   "homepage": "https://github.com/GoogleChromeArchive/sw-appcache-behavior/",
   "scripts": {
