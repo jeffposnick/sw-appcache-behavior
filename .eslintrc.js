@@ -3,7 +3,6 @@ module.exports = {
   env: {
     serviceworker: true,
     browser: true,
-    node: true,
     es6: true,
   },
   parserOptions: {

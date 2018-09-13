@@ -1,7 +1,7 @@
 {
   "name": "sw-appcache-behavior",
   "version": "0.1.0",
-  "description": "A service worker implementation of the behavior defined in a page's App Cache manifest.",
+  "description": "A service worker implementation of the behavior defined in a page's AppCache manifest.",
   "keywords": [
     "appcache",
     "service worker",
@@ -11,7 +11,8 @@
     "app cache"
   ],
   "files": [
-    "build"
+    "build",
+    "src"
   ],
   "author": {
     "name": "Jeff Posnick",
@@ -25,24 +26,26 @@
   "scripts": {
     "build": "npm run clean && rollup --config",
     "clean": "rimraf build",
-    "lint": "eslint src"
+    "lint": "eslint --ext=mjs src"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "cookie-parser": "^1.4.3",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "eslint": "^5.5.0",
     "eslint-config-google": "^0.10.0",
-    "express": "^4.16.3",
-    "geckodriver": "1.12.2",
-    "idb-keyval": "^3.1.0",
-    "mocha": "^5.2.0",
-    "parse-appcache-manifest": "^0.2.0",
+    "fs-extra": "^7.0.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.65.1",
+    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.1.6",
     "rollup-plugin-node-resolve": "^3.4.0",
-    "selenium-assistant": "^5.3.0",
-    "serve-index": "^1.9.1",
-    "sw-testing-helpers": "^1.0.2"
+    "rollup-plugin-terser": "^2.0.2"
+  },
+  "dependencies": {
+    "idb-keyval": "^3.1.0",
+    "parse-appcache-manifest": "^0.2.0"
   }
 }

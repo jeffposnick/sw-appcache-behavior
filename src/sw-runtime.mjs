@@ -244,13 +244,15 @@ async function noManifestBehavior(event) {
   // Use .map() to create an array of the longest matching prefix
   // for each manifest. If no prefixes match for a given manifest,
   // the value will be ''.
-  const longestForEach = await manifestUrls.map(async (manifestUrl) => {
-    const manifestVersions = await get(manifestUrl, store);
-    // Use the latest version of a given manifest.
-    const parsedManifest = manifestVersions[manifestVersions.length - 1].parsed;
-    return longestMatchingPrefix(Object.keys(parsedManifest.fallback),
-      event.request.url);
-  });
+  const longestForEach = await Promise.all(manifestUrls.map(
+    async (manifestUrl) => {
+      const versions = await get(manifestUrl, store);
+      // Use the latest version of a given manifest.
+      const parsedManifest = versions[versions.length - 1].parsed;
+      return longestMatchingPrefix(Object.keys(parsedManifest.fallback),
+        event.request.url);
+    }
+  ));
 
   // Next, find which of the longest matching prefixes from each manifest is the
   // longest overall. Return both the index of the manifest in which that match
@@ -468,7 +470,7 @@ async function cleanupOldCaches() {
  * @param {FetchEvent} event
  * @return {Promise<Response>}
  */
-async function fetch(event) {
+async function generateResponse(event) {
   const response = await appCacheBehaviorForEvent(event);
 
   // If this is a navigation, clean up unused caches that correspond to old
@@ -482,4 +484,4 @@ async function fetch(event) {
   return response;
 }
 
-export {fetch};
+export {generateResponse};
